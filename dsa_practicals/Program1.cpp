@@ -3,7 +3,7 @@
 using namespace std;
 
 int arr[20] = {0};
-int ed = 0, capacity = 20, size = 0;
+int ed = 0, capacity = 20;
 
 void insert(int element){
 	if(ed == capacity){
@@ -11,37 +11,42 @@ void insert(int element){
 		return;
 	}
 	arr[ed] = element;
-	ed++;	size++;
+	ed++;
 }
 
 void insert_at(int element, int idx){
-	if(size == capacity)	{
-		cout<<"The array has completely filled."<<endl;
+	if(ed == capacity)	{
+		cout<<"can't insert element"<<endl;
 		return;
 	}
 	else if(idx >= capacity){
-		cout<<"Invalid index"<<endl;
+		cout<<"Invalid index";
 		return;
 	}
+	else if(idx >= ed){
+		arr[ed] = element;
+		ed++;
+		return;
+	}
+	for(int i = ed; i > idx; i--){
+		arr[i] = arr[i - 1];
+	}
 	arr[idx] = element;
-	size++;
-	if(idx >= ed)	ed = idx + 1;
+	ed++;
 }
 
 void remove(int idx){
-	if(size == 0)	cout<<"The array is already empty"<<endl;
+	if(ed == 0)	cout<<"The array is already empty"<<endl;
 	else if(idx >= ed){
 		cout<<"Invalid index\n";
+		return;
 	}
 	else if(idx < ed){
 		for(int i = idx; i < ed; i++){
 			arr[i] = arr[i + 1];
 		}
 		ed--;
-	}else if(idx == ed){
-		ed--;
 	}
-	size--;
 }
 
 
@@ -58,7 +63,7 @@ int find(int element){
 }
 
 void display(){
-	if(size == 0){
+	if(ed == 0){
 		cout<<"The array is empty\n";
 		return;
 	}
@@ -70,7 +75,8 @@ void display(){
 
 int main(){
 	label:	cout<<"********* The capacity of the array is 20 ********* \n"<<endl;
-	cout<<"1. Inserion at the end\n2. Insertion at an index\n3. Searching\n4. Deletion\n5. Display\n6. Clear previous commands\n7. Exit\n\n";
+	cout<<"1. Inserion at the end\n2. Insertion at an index\n3. Searching\n4. Deletion\n5. Display\n6. Clear previous commands\n7. Exit\n";
+	cout<<"------------ Hi, This is 'Pankaj 196030' --------------\n\n";
 	while(true){
 		cout<<"Choose an option: ";
 		int option;
@@ -122,4 +128,3 @@ int main(){
 	getch();
 	return 0;
 }
-
