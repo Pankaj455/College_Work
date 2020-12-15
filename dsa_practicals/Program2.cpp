@@ -17,17 +17,11 @@ Node* head = NULL;
 
 void insert_node(int data){
 	Node* nn = new Node(data);
-	
+
 	if(head == NULL){
 		head = nn;
 	}
-	else if(head->next == NULL){
-		if(data < head->data){
-			nn->next = head;
-			head = nn;
-		}else
-			head->next = nn;
-	}else{
+	else{
 		if(data < head->data){
 			nn->next = head;
 			head = nn;
@@ -50,10 +44,15 @@ void insert_node(int data){
 }
 
 void remove_node(int data){
+	if(head == NULL){
+		cout<<"List is empty\n";
+		return;
+	}	
 	if(head->data == data){
 		Node* temp = head;
 		head = head->next;
 		delete temp;
+		return;
 	}
 	else{
 		Node* prev = NULL;
@@ -67,7 +66,7 @@ void remove_node(int data){
 			prev = curr;
 			curr = curr->next;
 		}
-		
+		cout<<data<<" is not present in the list\n";
 	}	
 }
 
@@ -87,16 +86,20 @@ int find(int data){
 
 void display(){
 	Node* temp = head;
-	while(temp != NULL){
+	if(temp == NULL)	cout<<"List is empty";
+	else{
+		while(temp != NULL){
 		cout<<temp->data<<" ";
 		temp = temp->next;
+		}
 	}
 	cout<<endl;
 }
 
 int main(){
 	label:	cout<<endl; 
-	cout<<endl<<"1. Insertion\n2. Deletion\n3. Searching\n4. Display\n5. Clear previous queries\n6. Exit\n\n";
+	cout<<endl<<"1. Insertion\n2. Deletion\n3. Searching\n4. Display\n5. Clear previous queries\n6. Exit\n";
+	cout<<"------------ Hi, This is 'Pankaj 196030' --------------\n\n";
 	while(true){
 		cout<<"Choose an option: ";
 		int option;
@@ -142,4 +145,3 @@ int main(){
 	getch();
 	return 0;
 }
-
