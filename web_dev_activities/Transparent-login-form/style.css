@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: monospace;
+}
+.main-container{
+    background-image: url('img.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+}
+.main-container .container{
+    width: 400px;
+    height: 480px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: black;
+    opacity: 0.85;
+    box-shadow: 0px 0px 10px 5px #131010;
+}
+.header{
+    display: flex;
+}
+.heading{
+    text-align: center;
+}
+.heading .btn{
+    width: 200px;
+    background-color: #2d312d;
+    color: white;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 8px 0px;
+}
+
+#login{
+    border-right: 1px solid black;
+}
+
+
+.heading .btn:active{
+    background-color: rgb(58, 52, 52);
+}
+.form{
+    display: flex;
+    overflow: hidden;
+}
+.login{
+    margin-left: 70px;
+    transition: 0.95s;
+}
+.sign-up{
+    margin-top: 35px;
+    margin-left: 140px;
+    transition: 0.95s;
+}
+.input{
+    margin-top: 100px;
+}
+.input input{
+    display: block;
+    background: none;
+    width: 260px;
+    margin: 20px auto;
+    padding: 10px 0px;
+    text-align: center;
+    border: 1px solid rgb(27, 25, 25);
+    border-radius: 15px;
+    outline: none;
+    color: white;
+    font-size: 16px;
+}
+.input input:focus{
+    /* border: 1px solid rgba(243, 161, 8,0.85); */
+    border: 1px solid white;
+}
+
+label{
+    color: rgb(128, 118, 118);
+    letter-spacing: 1px;
+} 
+.forgot{
+    color: rgb(128, 118, 118);
+    letter-spacing: 1px;
+    margin-left: 126px;
+    text-decoration: none;
+}
+.forgot:hover{
+    color: white;
+    text-decoration: underline;
+}
+.forgot:active{
+    color: rgb(128, 118, 118);
+}
+.sign-up .input{
+    margin-top: 45px;
+}
+.submit input[type='submit']{
+    display: block;
+    background: none;
+    width: 260px;
+    margin: 20px auto;
+    padding: 10px 0px;
+    text-align: center;
+    border: 1px solid rgb(27, 25, 25);
+    border-radius: 20px;
+    outline: none;
+    color: white;
+    font-size: 16px;
+}
+.submit input[type='submit']:hover{
+    background-color: green;
+    border: 1px solid rgb(5, 105, 5);
+    cursor: pointer;
+}
+.submit input[type='submit']:active{
+    background-color: rgb(13, 194, 13);
+}
